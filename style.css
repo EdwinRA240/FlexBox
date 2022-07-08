@@ -1,0 +1,93 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+.father {
+    background-color: white;
+    border: 1px black solid;
+    /* width: 1300px; */
+    height: 400px;
+    display: flex;
+    /*  flex -> BoxFlex 
+    */
+    flex-direction: row;
+    /*  In Eje principal
+        row -> horizontal, izq to der
+        row-reverse -> horizontal, der to izq
+        column -> vertical, top to bottom
+        column-reverse -> vertical, bottom to top
+    */
+     justify-content: space-evenly;
+    /*  In eje principal
+        strech -> horizontal, abarca toda la heigth
+        center -> horizontal, centra los elementos
+        flex-start -> horizontal, top top
+        flex-end -> horizontal, bottom bottom
+        space-around -> agrega separacion en items
+        space-between -> agrega separcion but en los extremos, no
+        space-evenly -> agrega separacion == in items
+    */
+    align-items: center;
+    /*  In eje secundario/cruzado
+        strech -> verticalmente, abarca toda la heigth
+        center -> verticalmente, centra los elementos
+        flex-start -> verticalmente, top top
+        flex-end-> verticalmente, bottom bottom
+    */
+    flex-wrap: nowrap;
+    /*  Solo funciona cuando no hay width in the father
+        nwrap -> pasa abajo a los items 
+    */
+    /* flex-flow: row wrap; */
+    /*  Optimiza flex-direction and flex-flow */
+    align-content: center;
+    /*  Solo con wrap y mueve a la direccion del eje secundario */
+}
+
+.item1 {
+    background-color: aqua;
+    border: 1px black solid;
+    order: 0;
+}
+
+.item2 {
+    background-color: rgb(0, 255, 51);
+    border: 1px black solid;
+    width: 200px;
+    align-self: flex-start;
+}
+
+.item3 {
+    background-color: aqua;
+    border: 1px black solid;
+    height: 200px;
+}
+
+.item4 {
+    background-color: rgb(219, 222, 43);
+    border: 1px black solid;
+    width: 300px;
+    height: 300px;
+    align-self: flex-end;
+}
+
+.item5 {
+    background-color: rgb(0, 255, 68);
+    border: 1px black solid;
+    width: 250px;
+    flex-grow: 1;
+    /*  Unicamente positivos 
+        El elmento CRECE en relacion a los demas 
+        grow
+    */
+}
+
+.item6 {
+    background-color: rgb(246, 143, 47);
+    border: 1px black solid;
+    width: 250px;
+    flex-shrink: 3;
+    /*   Unicamente positivos 
+        El elmento DECRECE en relacion a los demas 
+        shrink
+    */
+    align-self: stretch;
+}
